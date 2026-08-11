@@ -1,10 +1,14 @@
 import './App.css'
 import profileImage from '../public/perfil.webp'
+import Header from './components/Header'
 
 function App() {
 
   return (
-    <img className='w-100' src={profileImage} alt="" />
+    <div className='w-full min-h-screen bg-slate-800'>
+      <Header/>
+      <img src={profileImage} alt="" />
+    </div>
   )
 }
 
