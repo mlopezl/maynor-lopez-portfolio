@@ -1,3 +1,3 @@
-const links = [['Sobre mí', '#sobre-mi'], ['Habilidades', '#habilidades'], ['Proyectos', '#proyectos'], ['Experiencia', '#experiencia'], ['Educación', '#educacion'], ['Cursos', '#cursos']]
-function DesktopNav({ menuOpen, onNavigate }) { return <nav className={`nav ${menuOpen ? 'nav--open' : ''}`} aria-label="Navegación principal">{links.map(([label, href]) => <a href={href} onClick={onNavigate} key={href}>{label}</a>)}<a className="nav__mobile-contact" href="#contacto" onClick={onNavigate}>Contacto</a></nav> }
+const links = [['About', '#sobre-mi'], ['Skills', '#habilidades'], ['Projects', '#proyectos'], ['Experience', '#experiencia'], ['Education', '#educacion'], ['Courses', '#cursos']]
+function DesktopNav({ menuOpen, onNavigate }) { return <nav id="main-navigation" className={`nav ${menuOpen ? 'nav--open' : ''}`} aria-label="Main navigation">{links.map(([label, href]) => <a href={href} onClick={onNavigate} key={href}>{label}</a>)}<a className="nav__mobile-contact" href="#contacto" onClick={onNavigate}>Contact</a></nav> }
 export default DesktopNav
