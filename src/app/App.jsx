@@ -1,4 +1,4 @@
-import '../App.css'
+import '../styles/global.css'
 import Footer from '../components/layout/Footer'
 import Header from '../components/layout/Header'
 import useRevealOnScroll from '../hooks/useRevealOnScroll'
@@ -15,7 +15,7 @@ import SkillsSection from '../sections/SkillsSection'
 function App() {
   useRevealOnScroll()
 
-  return <div className="site-shell">
+  return <div className="overflow-hidden">
     <Header />
     <main>
       <HeroSection />

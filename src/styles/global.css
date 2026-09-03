@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family: 'Manrope', sans-serif;
+  color: #e7e9f5;
+  background: #070912;
+  font-synthesis: none;
+  --accent: #818cf8;
+  --accent-bright: #a5b4fc;
+  --muted: #9297ad;
+  --line: rgba(148, 163, 184, 0.14);
+  --green: #5eead4;
+  --green-strong: #34d399;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #070912;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, #000, transparent 65%);
+}
+
+::selection {
+  color: #070912;
+  background: var(--accent);
+}
+
+.hero-glow {
+  position: absolute;
+  top: 16%;
+  left: 25%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(16, 185, 129, 0.11);
+  filter: blur(100px);
+}
+
+.portrait-gradient {
+  background: radial-gradient(circle at 50% 40%, #1d2440, #0b0e18 72%);
+}
+
+.project-overlay::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(7, 9, 18, 0.05) 45%, rgba(7, 9, 18, 0.75));
+}
+
+.project-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--green);
+  opacity: 0.65;
+  transform: scaleX(0.25);
+  transform-origin: left;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.project-link:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
