@@ -1,9 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './app/App.jsx'
+import LanguageProvider from './i18n/LanguageProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <LanguageProvider><App /></LanguageProvider>
   </StrictMode>,
 )
